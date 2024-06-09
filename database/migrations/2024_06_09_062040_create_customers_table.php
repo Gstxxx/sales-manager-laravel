@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->uuid()->nullable();
+        Schema::create('customers', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->string('name')->nullable();
-            $table->decimal('number')->default(0);
+            $table->string('phone_number');
             $table->decimal('debit')->default(0);
             $table->timestamps();
         });
